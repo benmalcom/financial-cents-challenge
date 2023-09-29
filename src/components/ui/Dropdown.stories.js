@@ -1,5 +1,5 @@
-import Dropdown from './Dropdown.vue';
 import Button from './Button.vue';
+import Dropdown from './Dropdown.vue';
 
 const listItemClass =
   'flex px-4 pt-1 h-8 text-base cursor-pointer items-center box-border hover:bg-gray-20 hover:text-gray-60';
