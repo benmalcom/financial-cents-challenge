@@ -16,7 +16,7 @@ defineProps({
 
 <style module>
 .baseTag {
-  @apply text-white font-medium rounded-md text-sm px-5 py-3  border-none cursor-pointer opacity-90 hover:opacity-100;
+  @apply text-white font-semibold rounded-md text-base px-5 py-3  border-none cursor-pointer opacity-90 hover:opacity-100;
   &:disabled {
     @apply text-gray-40 bg-gray-30 focus:hover:bg-gray-30 focus:hover:text-gray-50 cursor-default !important;
   }
