@@ -18,9 +18,10 @@ const onOutsideClick = () => {
   <div class="relative w-fit" v-click-outside="onOutsideClick">
     <Icon
       icon="ph:dots-three-bold"
-      class="block text-white cursor-pointer w-6 h-6 hover:bg-green-20 rounded-full p-0.5"
+      class="dropdown-icon"
       :class="{ 'bg-green-20': isDropdownOpen }"
       @click="toggleDropdown"
+      data-testid="dropdown-icon"
     />
     <!-- Dropdown content goes here -->
     <div
@@ -32,4 +33,8 @@ const onOutsideClick = () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.dropdown-icon {
+  @apply block text-white cursor-pointer w-6 h-6 hover:bg-green-20 rounded-full p-0.5;
+}
+</style>

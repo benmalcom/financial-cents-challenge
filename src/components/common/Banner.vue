@@ -1,5 +1,9 @@
 <script setup>
 defineProps({
+  message: {
+    type: String,
+    required: true
+  },
   variant: {
     type: String,
     default: 'default',
@@ -10,17 +14,17 @@ defineProps({
 
 <template>
   <span :class="[$style.baseTag, $style[variant]]" v-bind="$attrs">
-    <slot></slot>
+    {{ message }}
   </span>
 </template>
 
 <style module>
 .baseTag {
-  @apply text-[10px] px-2 py-0.5 rounded-2xl;
+  @apply flex items-center text-sm mt-10 p-3;
 }
 
 .default {
-  @apply text-gray-60 bg-gray-30;
+  @apply text-gray-60 bg-gray-20;
 }
 
 .success {

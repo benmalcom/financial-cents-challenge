@@ -28,15 +28,11 @@ const onPageChange = (event) => emitPageChange(Number(event.target.value));
 </script>
 
 <template>
-  <div class="flex justify-between items-center w-full h-14 mt-8 p-0">
+  <div class="wrapper">
     <Button @click="onPreviousClick" variant="success" :disabled="currentPage <= 1"
       >Previous</Button
     >
-    <select
-      id="countries"
-      class="px-3 box-border py-3 border-[1px] border-solid bg-white border-gray-30 text-gray-900 text-sm rounded-md block w-14 focus:outline-none"
-      @change="onPageChange($event)"
-    >
+    <select id="countries" class="page-select" @change="onPageChange($event)">
       <option v-for="page in totalPages" :value="page" :selected="currentPage === page" :key="page">
         {{ page }}
       </option>
@@ -47,4 +43,11 @@ const onPageChange = (event) => emitPageChange(Number(event.target.value));
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  @apply flex justify-between items-center w-full h-14 mt-8 p-0;
+}
+.page-select {
+  @apply px-3 box-border py-3 border-[1px] border-solid bg-white border-gray-30 text-gray-900 text-sm rounded-md block w-14 focus:outline-none;
+}
+</style>
