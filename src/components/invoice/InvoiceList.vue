@@ -17,7 +17,7 @@ defineProps({
     <div class="grid-layout" v-if="loading" aria-busy="true">
       <InvoiceCardSkeleton v-for="index in 6" :key="index" />
     </div>
-    <div class="grid-layout" v-else>
+    <div class="grid-layout" aria-label="Invoice Cards" v-else>
       <InvoiceCard v-for="invoice in invoices" :invoice="invoice" :key="invoice.user.id" />
     </div>
   </section>

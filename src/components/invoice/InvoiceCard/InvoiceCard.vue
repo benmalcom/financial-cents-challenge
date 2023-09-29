@@ -13,12 +13,12 @@ const props = defineProps({
   }
 });
 
-const { user, ...invoiceInfo } = props.invoice;
+const { user: userInfo, ...invoiceInfo } = props.invoice;
 </script>
 
 <template>
   <div class="invoice-wrapper" aria-label="Invoice card" aria-current="true" v-bind="$attrs">
-    <ClientProfile :user="user" />
+    <ClientProfile :user="userInfo" />
     <InvoiceSummary :data="invoiceInfo" />
   </div>
 </template>

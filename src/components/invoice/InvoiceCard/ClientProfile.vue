@@ -1,14 +1,17 @@
 <script setup>
+import { computed } from 'vue';
 import { Dropdown } from '@/components/ui';
 
 const dropdownItems = ['View', 'Edit', 'Delete'];
 
-defineProps({
+const props = defineProps({
   user: {
     type: Object,
     required: true
   }
 });
+
+const fullName = computed(() => `${props.user.first_name} ${props.user.last_name}`);
 </script>
 
 <template>
@@ -20,13 +23,11 @@ defineProps({
         alt="User avatar"
         aria-describedby="client-avatar-description"
       />
-      <span id="client-avatar-description" class="sr-only"
-        >Avatar image for {{ user.first_name + ' ' + user.last_name }}</span
-      >
+      <span id="client-avatar-description" class="sr-only">Avatar image for {{ fullName }}</span>
     </div>
     <div class="client-info">
       <div class="client-name">
-        {{ user.first_name + ' ' + user.last_name }}
+        {{ fullName }}
       </div>
       <Dropdown :aria-haspopup="true" :aria-expanded="false">
         <ul class="dropdown-menu" role="menu">

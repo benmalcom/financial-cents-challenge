@@ -2,15 +2,15 @@
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
 
-const isDropdownOpen = ref(false);
+const isMenuOpen = ref(false);
 
 const toggleDropdown = () => {
-  isDropdownOpen.value = !isDropdownOpen.value;
+  isMenuOpen.value = !isMenuOpen.value;
 };
 
 const onOutsideClick = () => {
-  if (isDropdownOpen.value) {
-    isDropdownOpen.value = false;
+  if (isMenuOpen.value) {
+    isMenuOpen.value = false;
   }
 };
 </script>
@@ -18,21 +18,19 @@ const onOutsideClick = () => {
 <template>
   <div class="relative w-fit -mr-1.5" v-bind="$attrs" v-click-outside="onOutsideClick">
     <!-- Dropdown trigger element -->
-    <slot name="triggerElement" :isOpen="isDropdownOpen" :toggleDropdown="toggleDropdown">
+    <slot name="triggerElement" :isOpen="isMenuOpen" :toggleDropdown="toggleDropdown">
       <Icon
         icon="ph:dots-three-bold"
         class="dropdown-icon"
-        :class="{ 'bg-green-20': isDropdownOpen }"
+        :class="{ 'bg-green-20': isMenuOpen }"
         @click="toggleDropdown"
         data-testid="dropdown-icon"
+        aria-label="Dropdown menu button"
       />
     </slot>
 
     <!-- Dropdown content -->
-    <div
-      v-if="isDropdownOpen"
-      class="absolute right-0 py-0 mt-1.5 bg-white shadow-lg rounded-md z-20"
-    >
+    <div v-if="isMenuOpen" class="absolute right-0 py-0 mt-1.5 bg-white shadow-lg rounded-md z-20">
       <slot />
     </div>
   </div>
