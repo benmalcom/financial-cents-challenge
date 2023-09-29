@@ -17,7 +17,7 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 </script>
 
 <template>
-  <div class="invoice-summary" aria-label="Invoice summary" aria-current="true">
+  <div class="invoice-summary" role="region" aria-label="Invoice summary" aria-current="true">
     <div class="invoice-summary-top">
       <span class="invoice-summary-item">Last invoice</span>
       <span class="invoice-summary-item">{{ formattedDueDate }}</span>
@@ -46,7 +46,7 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 }
 
 .invoice-summary-item {
-  @apply text-gray-40;
+  @apply text-gray-40 font-normal;
 }
 
 .invoice-summary-amount {

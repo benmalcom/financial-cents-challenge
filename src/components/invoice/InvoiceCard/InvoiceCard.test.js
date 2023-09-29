@@ -21,7 +21,7 @@ describe('InvoiceCard', () => {
       }
     });
 
-    expect(await screen.getByText(/Janet Weaver/)).toBeInTheDocument();
+    expect(await screen.getAllByText(/Janet Weaver/)).toHaveLength(2);
     expect(await screen.getByText(/Paid/)).toBeInTheDocument();
     expect(await screen.getByText(/\$1,200.00/)).toBeInTheDocument();
     expect(await screen.getByText(/October 15, 2023/)).toBeInTheDocument();

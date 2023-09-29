@@ -24,7 +24,7 @@ defineProps({
 
 <style scoped>
 .base {
-  @apply text-[9px] py-[1px] px-2 rounded-2xl;
+  @apply text-[8.5px] py-[1px] px-2 rounded-2xl font-medium;
 }
 
 .default {

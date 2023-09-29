@@ -12,9 +12,17 @@ defineProps({
 </script>
 
 <template>
-  <div class="client-details" aria-label="Client details" aria-current="true">
+  <div class="client-details" role="region" aria-label="Client details" aria-current="true">
     <div class="client-avatar">
-      <img class="client-avatar-image" :src="user.avatar" alt="User avatar" />
+      <img
+        class="client-avatar-image"
+        :src="user.avatar"
+        alt="User avatar"
+        aria-describedby="client-avatar-description"
+      />
+      <span id="client-avatar-description" class="sr-only"
+        >Avatar image for {{ user.first_name + ' ' + user.last_name }}</span
+      >
     </div>
     <div class="client-info">
       <div class="client-name">
@@ -56,7 +64,7 @@ defineProps({
 }
 
 .client-name {
-  @apply font-semibold text-white truncate mr-3.5;
+  @apply font-medium text-gray-10 truncate mr-3.5;
 }
 
 .dropdown-menu {

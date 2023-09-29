@@ -47,9 +47,11 @@ const showEmptyBanner = computed(
 </script>
 
 <template>
-  <InvoicesLayout>
-    <h1 class="text-gray-60 mb-0 font-medium text-2xl md:text-3xl">Monthly Bookkeeping</h1>
-    <p class="text-gray-40 mt-3">List of paid and outstanding invoices.</p>
+  <InvoicesLayout role="region" aria-label="Monthly bookkeeping invoices list" aria-current="page">
+    <h1 class="text-gray-60 mb-0 font-semibold opacity-90 text-2xl md:text-3xl">
+      Monthly Bookkeeping
+    </h1>
+    <p class="text-gray-50 mt-3 font-normal opacity-80">List of paid and outstanding invoices.</p>
 
     <Banner variant="danger" v-if="showErrorBanner">
       An error occurred while fetching invoices, please reload page.

@@ -50,7 +50,8 @@ Here are some insights into the design decisions and thoughts that went into thi
 * __Design File:__ It's worth noting that having a design file, such as a Figma document, instead of just an image, would have allowed for a more precise translation of the design into the UI components. But I understand there might be valid reasons that necessitated the use of an image.
 * __Testing:__ Unit tests have been incorporated to ensure the reliability and stability of the application.
 * __Storybook__: I have integrated Storybook to facilitate the exploration and presentation of our UI components in isolation. It serves as a valuable resource for both developers and designers to understand, interact with, and maintain the design system consistently.
-* __External Libraries__: Because of the small size of the project, there's a deliberate effort to use as minimal external libraries as possible.
+* __Mobile First & Accessibility__: Made all views accessible for special users and responsive for better user centricity.
+* __Less External Libraries__: Because of the small size of the project, there's a deliberate effort to use as minimal external libraries as possible.
 
 ### Screenshots
 
