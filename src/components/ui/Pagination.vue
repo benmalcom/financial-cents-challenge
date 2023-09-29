@@ -30,7 +30,12 @@ watch(currentPage, (newPage) => emit('page-change', newPage));
       >Previous</Button
     >
     <label for="page-selector" class="sr-only">Select a page:</label>
-    <select class="page-selector" aria-controls="page-selector" @change="onPageChange($event)">
+    <select
+      class="page-selector"
+      id="page-selector"
+      aria-controls="page-selector"
+      @change="onPageChange($event)"
+    >
       <option
         v-for="page in totalPages"
         :value="page"
