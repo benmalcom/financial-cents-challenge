@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div class="w-full xl:w-[50%] 2xl:w-full flex flex-col drop-shadow-md">
+  <div class="flex flex-col drop-shadow-md">
     <!-- Loading Skeleton for User Info -->
     <div
       class="w-full flex p-5 box-border gap-x-3 items-center bg-gray-200 rounded-t-2xl animate-pulse"

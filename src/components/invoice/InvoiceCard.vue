@@ -21,6 +21,6 @@ const { user, ...invoiceData } = props.invoice;
 
 <style lang="postcss" scoped>
 .wrapper {
-  @apply w-full xl:w-[50%] 2xl:w-full flex flex-col drop-shadow-md hover:drop-shadow-xl;
+  @apply flex flex-col drop-shadow-md hover:drop-shadow-xl;
 }
 </style>
