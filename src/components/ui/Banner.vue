@@ -1,20 +1,30 @@
 <script setup>
+import { COLORS_VARIANTS } from '@/utils/constants';
+
 defineProps({
   variant: {
     type: String,
     default: 'default',
-    validator: (value) => ['default', 'danger', 'success'].includes(value)
+    validator: (value) => COLORS_VARIANTS.includes(value)
   }
 });
 </script>
 
 <template>
-  <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
+  <div
+    :class="{
+      base: true,
+      [variant]: true
+    }"
+    aria-label="alert"
+    role="alert"
+    v-bind="$attrs"
+  >
     <slot />
-  </span>
+  </div>
 </template>
 
-<style module>
+<style scoped>
 .base {
   @apply flex items-center text-sm mt-10 p-3;
 }

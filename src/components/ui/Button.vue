@@ -11,14 +11,22 @@ defineProps({
 </script>
 
 <template>
-  <button type="button" :class="[$style.base, $style[variant]]" v:bind="$attrs">
+  <button
+    type="button"
+    :class="{
+      base: true,
+      [variant]: true
+    }"
+    v-bind="$attrs"
+  >
     <slot />
   </button>
 </template>
 
-<style module>
+<style scoped>
 .base {
   @apply text-white font-semibold rounded-md text-base px-5 py-3 border-none cursor-pointer hover:opacity-80;
+
   &:disabled {
     @apply text-gray-40 bg-gray-20 cursor-default hover:opacity-100;
   }

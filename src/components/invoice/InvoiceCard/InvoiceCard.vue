@@ -1,6 +1,6 @@
 <script setup>
-import UserDetails from '@/components/invoice/InvoiceCard/UserDetails.vue';
-import InvoiceDetails from '@/components/invoice/InvoiceCard/InvoiceDetails.vue';
+import InvoiceDetails from './InvoiceDetails.vue';
+import UserDetails from './UserDetails.vue';
 
 const props = defineProps({
   invoice: {
@@ -13,7 +13,7 @@ const { user, ...invoiceData } = props.invoice;
 </script>
 
 <template>
-  <div class="invoice-wrapper">
+  <div class="invoice-wrapper" aria-label="Invoice card" aria-current="true" v-bind="$attrs">
     <UserDetails :user="user" />
     <InvoiceDetails :data="invoiceData" />
   </div>
@@ -21,6 +21,6 @@ const { user, ...invoiceData } = props.invoice;
 
 <style scoped>
 .invoice-wrapper {
-  @apply flex flex-col drop-shadow-md hover:drop-shadow-xl rounded-2xl;
+  @apply w-full flex flex-col drop-shadow-md hover:drop-shadow-xl rounded-2xl;
 }
 </style>

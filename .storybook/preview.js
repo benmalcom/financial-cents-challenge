@@ -8,7 +8,9 @@ import { onClickOutside } from '@/directives'; // replace with the name of your 
 const preview = {
   parameters: {
     layout: 'padded',
-    viewport: {},
+    viewport: {
+      viewports: INITIAL_VIEWPORTS
+    },
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {

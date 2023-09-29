@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
-import InvoiceCard from './InvoiceCard.vue';
 import { SAMPLE_INVOICE } from './data';
+import InvoiceCard from './InvoiceCard.vue';
 
 const sampleInvoice = SAMPLE_INVOICE;
 
@@ -12,7 +12,7 @@ describe('InvoiceCard', () => {
       }
     });
 
-    expect(await screen.getByText(/John Doe/)).toBeInTheDocument();
+    expect(await screen.getByText(/Janet Weaver/)).toBeInTheDocument();
     expect(await screen.getByText(/Paid/)).toBeInTheDocument();
     expect(await screen.getByText(/\$12,000.00/)).toBeInTheDocument();
     expect(await screen.getByText(/October 15, 2023/)).toBeInTheDocument();

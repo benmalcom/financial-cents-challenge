@@ -1,6 +1,6 @@
 <script setup>
-import { Button } from '@/components/ui';
 import { watch } from 'vue';
+import { Button } from '@/components/ui';
 import { usePagination } from '@/composables';
 
 const props = defineProps({
@@ -25,12 +25,19 @@ watch(currentPage, (newPage) => emit('page-change', newPage));
 </script>
 
 <template>
-  <div class="pagination-wrapper">
+  <div class="pagination-wrapper" aria-label="Pagination">
     <Button @click="onPreviousClick" variant="success" :disabled="currentPage <= 1"
       >Previous</Button
     >
-    <select class="page-selector" @change="onPageChange($event)">
-      <option v-for="page in totalPages" :value="page" :selected="currentPage === page" :key="page">
+    <label for="page-selector" class="sr-only">Select a page:</label>
+    <select class="page-selector" aria-controls="page-selector" @change="onPageChange($event)">
+      <option
+        v-for="page in totalPages"
+        :value="page"
+        :selected="currentPage === page"
+        :key="page"
+        :aria-current="currentPage === page"
+      >
         {{ page }}
       </option>
     </select>

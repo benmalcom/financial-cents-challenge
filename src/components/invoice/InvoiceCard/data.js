@@ -1,7 +1,7 @@
 export const SAMPLE_INVOICE = {
   user: {
-    first_name: 'John',
-    last_name: 'Doe',
+    first_name: 'Janet ',
+    last_name: 'Weaver',
     email: 'johndoe@gmail.com',
     avatar: 'https://reqres.in/img/faces/2-image.jpg'
   },

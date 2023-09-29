@@ -12,21 +12,23 @@ defineProps({
 </script>
 
 <template>
-  <div class="user-card">
+  <div class="user-details" aria-label="User details" aria-current="true">
     <div class="user-avatar">
-      <img class="user-avatar-image" :src="user.avatar" alt="User Logo" />
+      <img class="user-avatar-image" :src="user.avatar" alt="User avatar" />
     </div>
     <div class="user-info">
       <div class="user-name">
         {{ user.first_name + ' ' + user.last_name }}
       </div>
-      <Dropdown>
-        <ul class="dropdown-menu">
+      <Dropdown :aria-haspopup="true" :aria-expanded="false">
+        <ul class="dropdown-menu" role="menu">
           <li
             class="dropdown-item"
+            role="menuitem"
             v-for="(item, index) in dropdownItems"
             :class="{ danger: index === dropdownItems.length - 1 }"
             :key="index"
+            :aria-label="item + ' dropdown item'"
           >
             {{ item }}
           </li>
@@ -37,7 +39,7 @@ defineProps({
 </template>
 
 <style lang="postcss" scoped>
-.user-card {
+.user-details {
   @apply w-full flex p-5 box-border gap-x-3 items-center bg-green-30 rounded-t-[inherit];
 }
 

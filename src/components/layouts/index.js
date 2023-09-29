@@ -1,1 +1,1 @@
-export { default as StackedLayout } from './StackedLayout.vue'
+export { default as InvoicesLayout } from './InvoicesLayout.vue';

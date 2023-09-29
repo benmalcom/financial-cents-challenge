@@ -1,8 +1,8 @@
 <script setup>
-import { Badge } from '@/components/ui';
-import { formatAmount } from '@/utils/invoice';
 import dayjs from 'dayjs';
 import { computed } from 'vue';
+import { Badge } from '@/components/ui';
+import { formatAmount } from '@/utils/invoice';
 
 const props = defineProps({
   data: {
@@ -17,41 +17,40 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 </script>
 
 <template>
-  <div class="invoice-card">
-    <div class="invoice-header">
-      <span class="invoice-detail">Last invoice</span>
-      <span class="invoice-detail">{{ formattedDueDate }}</span>
+  <div class="invoice-details" aria-label="Invoice details" aria-current="true">
+    <div class="invoice-details-top">
+      <span class="invoice-details-item">Last invoice</span>
+      <span class="invoice-details-item">{{ formattedDueDate }}</span>
     </div>
-    <hr />
-    <div class="invoice-details">
-      <span class="invoice-detail">Amount</span>
-      <div class="amount-badge">
-        <span class="amount-text">{{ formattedAmount }}</span>
-        <Badge :variant="badgeVariant">{{ data.status }}</Badge>
+    <hr role="separator" />
+    <div class="invoice-details-bottom">
+      <span class="invoice-details-item">Amount</span>
+      <div class="invoice-details-amount" aria-describedby="amount-text">
+        <span class="amount-text" id="amount-text">{{ formattedAmount }}</span>
+        <Badge :variant="badgeVariant" role="status" :aria-label="data.status">{{
+          data.status
+        }}</Badge>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="postcss" scoped>
-.invoice-card {
+.invoice-details {
   @apply w-full px-6 py-2 box-border bg-white flex flex-col justify-between rounded-b-[inherit];
 }
 
-.invoice-header {
+.invoice-details-top,
+.invoice-details-bottom {
   @apply flex justify-between items-center h-9;
 }
 
-.invoice-detail {
+.invoice-details-item {
   @apply text-gray-40;
 }
 
-.invoice-details {
-  @apply flex justify-between h-9  items-center;
-}
-
-.amount-badge {
-  @apply flex items-center gap-2;
+.invoice-details-amount {
+  @apply flex items-center gap-1.5;
 }
 
 .amount-text {

@@ -1,10 +1,10 @@
 <script setup>
-import { StackedLayout } from '@/components/layouts';
-import { InvoiceList, InvoiceListSkeleton } from '@/components/invoice';
 import { computed, onMounted, reactive, ref } from 'vue';
-import { getRandomInvoices } from '@/utils/invoice';
+import { InvoiceList } from '@/components/invoice';
+import { InvoicesLayout } from '@/components/layouts';
 import { Pagination, Banner } from '@/components/ui';
 import { fetchUsers } from '@/services/user';
+import { getRandomInvoices } from '@/utils/invoice';
 
 const currentPage = ref(1);
 const totalPages = ref(0);
@@ -38,10 +38,6 @@ const onPageChange = (newPage) => {
   fetchInvoices();
 };
 
-const showList = computed(
-  () => !invoiceState.loading && invoiceState.invoices.length > 0 && !invoiceState.error
-);
-
 const showPagination = computed(() => invoiceState.invoices.length > 0 && !invoiceState.error);
 const showErrorBanner = computed(() => invoiceState.error && !invoiceState.loading);
 const showEmptyBanner = computed(
@@ -50,7 +46,7 @@ const showEmptyBanner = computed(
 </script>
 
 <template>
-  <StackedLayout>
+  <InvoicesLayout>
     <h1 class="text-gray-60 mb-0 font-medium text-2xl md:text-3xl">Monthly Bookkeeping</h1>
     <p class="text-gray-40 mt-3">List of paid and outstanding invoices.</p>
 
@@ -59,15 +55,17 @@ const showEmptyBanner = computed(
     </Banner>
     <Banner variant="default" v-if="showEmptyBanner">There are no invoices available.</Banner>
 
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-6">
-      <InvoiceListSkeleton v-if="invoiceState.loading" />
-      <InvoiceList v-if="showList" :invoices="invoiceState.invoices" />
-    </div>
+    <InvoiceList
+      v-if="!invoiceState.error"
+      :loading="invoiceState.loading"
+      :invoices="invoiceState.invoices"
+    />
+
     <Pagination
       v-if="showPagination"
       :currentPage="currentPage"
       :totalPages="totalPages"
       @page-change="onPageChange"
     />
-  </StackedLayout>
+  </InvoicesLayout>
 </template>

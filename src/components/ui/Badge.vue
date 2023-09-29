@@ -11,14 +11,20 @@ defineProps({
 </script>
 
 <template>
-  <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
+  <span
+    :class="{
+      base: true,
+      [variant]: true
+    }"
+    v-bind="$attrs"
+  >
     <slot />
   </span>
 </template>
 
-<style module>
+<style scoped>
 .base {
-  @apply text-[10px] px-2 py-0.5 rounded-2xl;
+  @apply text-[9px] py-[1px] px-2 rounded-2xl;
 }
 
 .default {
