@@ -4,14 +4,27 @@ export default {
   title: 'Components/UI/Button',
   component: Button,
   argTypes: {
-    outlined: { control: 'boolean' }
+    default: {
+      content: 'text'
+    },
+    variant: {
+      control: {
+        type: 'inline-radio'
+      },
+      options: ['default', 'success'],
+      description: 'Specifies the variant of the button, can be default or success'
+    }
+  },
+  args: {
+    variant: 'default',
+    default: 'Badge'
   }
 };
 
 const Template = (args) => ({
   components: { Button },
   setup: () => ({ args }),
-  template: '<Button v-bind="args">{{ args.slotContent }}</Button>'
+  template: '<Button v-bind="args">{{ args.default }}</Button>'
 });
 
 export const Default = Template.bind({});
@@ -20,16 +33,16 @@ export const Success = Template.bind({});
 Success.args = {
   ...Default.args,
   variant: 'success',
-  slotContent: 'Button'
+  default: 'Button'
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...Default.args,
-  slotContent: 'Button',
+  default: 'Button',
   disabled: true
 };
 
 Default.args = {
-  slotContent: 'Button'
+  default: 'Button'
 };

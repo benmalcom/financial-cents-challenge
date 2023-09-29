@@ -1,6 +1,10 @@
 {
   "name": "financial-cents-challenge",
   "version": "0.0.0",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  },
   "private": true,
   "scripts": {
     "dev": "vite",

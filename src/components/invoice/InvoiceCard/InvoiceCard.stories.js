@@ -5,7 +5,18 @@ import { InvoicesLayout } from '@/components/layouts';
 export default {
   title: 'Components/Invoice',
   component: InvoiceCard,
-  parameters: {}
+  argTypes: {
+    invoice: {
+      description: 'This is an invoice sample data',
+      control: {
+        type: 'object',
+        mapping: SAMPLE_INVOICE
+      }
+    }
+  },
+  args: {
+    invoice: SAMPLE_INVOICE
+  }
 };
 
 const Template = (args) => ({
