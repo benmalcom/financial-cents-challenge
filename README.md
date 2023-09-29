@@ -1,10 +1,12 @@
 # Financial Cents Challenge
 
-Welcome to the Financial Cents Challenge repository! This project was created using Vite, built with Vue 3, and styled with Tailwind CSS. Below, you'll find instructions on how to set up and run the project, along with additional information about the design decisions and thoughts behind it.
+Welcome to the Financial Cents Challenge repository! This project was created using Vite, built with Vue 3, Tailwind CSS. 
 
 ### Project Setup
 
-To get started, follow these steps to set up the project:
+
+To get started, Make sure you have Node.js (version 16 and upwards) installed on your machine, then run the command below in the project root:
+
 
 ```sh
 npm install
