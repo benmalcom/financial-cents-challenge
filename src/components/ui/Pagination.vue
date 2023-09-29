@@ -1,5 +1,7 @@
 <script setup>
 import { Button } from '@/components/ui';
+import { watch } from 'vue';
+import { usePagination } from '@/composables';
 
 const props = defineProps({
   currentPage: {
@@ -12,21 +14,14 @@ const props = defineProps({
   }
 });
 
+const { onPreviousClick, onNextClick, currentPage, onPageChange } = usePagination({
+  initialPage: props.currentPage,
+  totalPages: props.totalPages
+});
+
 const emit = defineEmits(['page-change']);
 
-const onPreviousClick = () => {
-  if (props.currentPage <= 1) return;
-  emitPageChange(props.currentPage - 1);
-};
-
-const onNextClick = () => {
-  if (props.currentPage >= props.totalPages) return;
-  emitPageChange(props.currentPage + 1);
-};
-
-const emitPageChange = (page) => emit('page-change', page);
-
-const onPageChange = (event) => emitPageChange(Number(event.target.value));
+watch(currentPage, (newPage) => emit('page-change', newPage));
 </script>
 
 <template>

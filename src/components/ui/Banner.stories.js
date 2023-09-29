@@ -2,10 +2,7 @@ import Banner from './Banner.vue';
 
 export default {
   title: 'Components/UI/Banner',
-  component: Banner,
-  argTypes: {
-    outlined: { control: 'boolean' }
-  }
+  component: Banner
 };
 
 const Template = (args) => ({

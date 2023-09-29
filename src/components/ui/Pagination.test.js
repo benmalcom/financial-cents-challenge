@@ -17,7 +17,7 @@ describe('Pagination', () => {
   });
 
   it('Sets new page on click of Next/Previous ', async () => {
-    const wrapper = render(Pagination, {
+    render(Pagination, {
       props: {
         currentPage: 1,
         totalPages: 6
@@ -25,6 +25,24 @@ describe('Pagination', () => {
     });
     expect(screen.getByRole('combobox')).toHaveValue('1');
     await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
-    console.log('Insect ', wrapper.emitted()['page-change']);
+    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(screen.getByRole('combobox')).toHaveValue('3');
+    await fireEvent.click(screen.getByRole('button', { name: 'Previous' }));
+    expect(screen.getByRole('combobox')).toHaveValue('2');
+  });
+
+  it('Emits new page value on click of Next/Previous ', async () => {
+    const wrapper = render(Pagination, {
+      props: {
+        currentPage: 1,
+        totalPages: 6
+      }
+    });
+    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(wrapper.emitted('page-change')[0]).toEqual([2]);
+    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(wrapper.emitted('page-change')[1]).toEqual([3]);
+    await fireEvent.click(screen.getByRole('button', { name: 'Previous' }));
+    expect(wrapper.emitted('page-change')[2]).toEqual([2]);
   });
 });

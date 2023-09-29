@@ -2,10 +2,7 @@ import Badge from './Badge.vue';
 
 export default {
   title: 'Components/UI/Badge',
-  component: Badge,
-  argTypes: {
-    outlined: { control: 'boolean' }
-  }
+  component: Badge
 };
 
 const Template = (args) => ({
