@@ -1,4 +1,4 @@
-// usePagination.js
+// pagination.js
 import { ref } from 'vue';
 const usePagination = ({ initialPage, totalPages }) => {
   const currentPage = ref(initialPage);
