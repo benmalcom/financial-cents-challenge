@@ -1,7 +1,7 @@
 <script setup>
-import { reactive } from 'vue';
+import { computed, reactive } from 'vue';
 
-defineProps({
+const props = defineProps({
   variant: {
     type: String,
     default: 'default',
@@ -15,20 +15,22 @@ const colorVariantMap = reactive({
     bgColor: 'bg-gray-30'
   },
   success: {
-    color: 'text-gray-30',
-    bgColor: 'bg-gray-10'
+    color: 'text-green-30',
+    bgColor: 'bg-green-10'
   },
   danger: {
-    color: 'text-gray-20',
-    bgColor: 'bg-gray-10'
+    color: 'text-red-20',
+    bgColor: 'bg-red-10'
   }
 });
+
+const variantClass = computed(
+  () => `${colorVariantMap[props.variant].bgColor} ${colorVariantMap[props.variant].color}`
+);
 </script>
 
 <template>
-  <span
-    :class="`${colorVariantMap[variant].bgColor} ${colorVariantMap[variant].color} text-xs mr-2 px-2.5 py-0.5 rounded `"
-  >
+  <span :class="`${variantClass} text-xs mr-2 px-2 rounded-2xl`">
     <slot></slot>
   </span>
 </template>
