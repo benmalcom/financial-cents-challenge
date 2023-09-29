@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue';
 import { Badge, Dropdown } from '@/components/common';
 
 defineProps({
@@ -36,8 +35,8 @@ defineProps({
       <hr />
       <div class="flex justify-between">
         <span class="invoice-detail">Amount</span>
-        <div class="flex items-center gap-1">
-          <span class="text-gray-50 font-medium">$600</span>
+        <div class="flex items-center gap-2">
+          <span class="text-gray-60 font-medium">$600</span>
           <Badge variant="danger">paid</Badge>
         </div>
       </div>
