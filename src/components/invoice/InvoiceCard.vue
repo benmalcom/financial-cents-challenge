@@ -4,6 +4,8 @@ import { formatAmount } from '@/utils/invoice';
 import * as dayjs from 'dayjs';
 import { computed } from 'vue';
 
+const dropdownItems = ['View', 'Edit', 'Delete'];
+
 const props = defineProps({
   invoice: {
     type: Object,
@@ -24,10 +26,14 @@ const badgeVariant = computed(() => (props.invoice.status === 'Overdue' ? 'dange
         </div>
         <Dropdown>
           <ul class="w-32 px-0 py-0 my-1 text-sm text-gray-50">
-            <li class="dropdown-item" v-for="(item, index) in ['View', 'Edit']" :key="index">
+            <li
+              class="dropdown-item"
+              v-for="(item, index) in dropdownItems"
+              :class="{ danger: index === dropdownItems.length - 1 }"
+              :key="index"
+            >
               {{ item }}
             </li>
-            <li class="dropdown-item danger">Delete</li>
           </ul>
         </Dropdown>
       </div>
