@@ -51,3 +51,10 @@ Here are some insights into the design decisions and thoughts that went into thi
 * __Testing:__ Unit tests have been incorporated to ensure the reliability and stability of the application.
 * __Storybook__: I have integrated Storybook to facilitate the exploration and presentation of our UI components in isolation. It serves as a valuable resource for both developers and designers to understand, interact with, and maintain the design system consistently.
 * __External Libraries__: Because of the small size of the project, there's a deliberate effort to use as minimal external libraries as possible.
+
+### Screenshots
+
+![Desktop](https://github.com/benmalcom/financial-cents-challenge/assets/5072922/3f3cc054-e415-4ad4-9437-d3bad87f201c)
+
+![Mobile](https://github.com/benmalcom/financial-cents-challenge/assets/5072922/50ef670c-4c84-41b7-a764-e5a1a2ca3818)
+![Tablet](https://github.com/benmalcom/financial-cents-challenge/assets/5072922/55ca60d4-a2f8-4fba-839e-5a07b309ad01)
