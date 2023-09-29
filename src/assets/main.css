@@ -1,3 +1,14 @@
 @tailwind base;
+
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply h-full w-full p-0 m-0 bg-gray-100;
+    }
+
+    hr {
+        @apply border-0 h-0 w-full border-solid border-t-[1px] border-b-[1px] border-gray-10 !important;
+    }
+}
