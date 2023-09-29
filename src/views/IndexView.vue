@@ -48,7 +48,7 @@ const showPagination = computed(() => invoiceState.invoices.length > 0 && !invoi
 <template>
   <StackedLayout>
     <h1 class="text-gray-60 mb-0 font-medium text-2xl md:text-3xl">Monthly Bookkeeping</h1>
-    <p class="text-gray-50 mt-3">List of paid and outstanding invoices.</p>
+    <p class="text-gray-40 mt-3">List of paid and outstanding invoices.</p>
 
     <Banner
       variant="danger"

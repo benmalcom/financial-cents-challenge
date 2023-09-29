@@ -18,7 +18,7 @@ defineProps({
 .baseTag {
   @apply text-white font-semibold rounded-md text-base px-5 py-3  border-none cursor-pointer opacity-90 hover:opacity-100;
   &:disabled {
-    @apply text-gray-40 bg-gray-30 focus:hover:bg-gray-30 focus:hover:text-gray-50 focus:hover:opacity-90 cursor-default !important;
+    @apply text-gray-40 bg-gray-20 focus:hover:bg-gray-30 focus:hover:text-gray-50 focus:hover:opacity-90 cursor-default !important;
   }
 }
 
