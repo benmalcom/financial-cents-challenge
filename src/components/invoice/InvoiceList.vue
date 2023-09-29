@@ -11,5 +11,3 @@ defineProps({
 <template>
   <InvoiceCard v-for="invoice in invoices" :invoice="invoice" :key="invoice.user.id" />
 </template>
-
-<style scoped></style>

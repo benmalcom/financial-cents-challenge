@@ -1,5 +1,5 @@
 <script setup>
-import { Badge } from '@/components/common';
+import { Badge } from '@/components/ui';
 import { formatAmount } from '@/utils/invoice';
 import dayjs from 'dayjs';
 import { computed } from 'vue';
@@ -35,7 +35,7 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 
 <style lang="postcss" scoped>
 .invoice-card {
-  @apply w-full px-6 py-2 box-border bg-white rounded-b-2xl flex flex-col justify-between;
+  @apply w-full px-6 py-2 box-border bg-white flex flex-col justify-between rounded-b-[inherit];
 }
 
 .invoice-header {

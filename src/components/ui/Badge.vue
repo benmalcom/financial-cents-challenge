@@ -9,13 +9,13 @@ defineProps({
 </script>
 
 <template>
-  <span :class="[$style.baseTag, $style[variant]]" v-bind="$attrs">
+  <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
     <slot></slot>
   </span>
 </template>
 
 <style module>
-.baseTag {
+.base {
   @apply text-[10px] px-2 py-0.5 rounded-2xl;
 }
 

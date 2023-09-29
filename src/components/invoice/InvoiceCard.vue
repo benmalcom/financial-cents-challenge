@@ -13,14 +13,14 @@ const { user, ...invoiceData } = props.invoice;
 </script>
 
 <template>
-  <div class="wrapper">
+  <div class="invoice-wrapper">
     <UserDetails :user="user" />
     <InvoiceDetails :data="invoiceData" />
   </div>
 </template>
 
-<style lang="postcss" scoped>
-.wrapper {
-  @apply flex flex-col drop-shadow-md hover:drop-shadow-xl;
+<style scoped>
+.invoice-wrapper {
+  @apply flex flex-col drop-shadow-md hover:drop-shadow-xl rounded-2xl;
 }
 </style>

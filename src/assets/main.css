@@ -5,12 +5,18 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply h-full w-full p-0 m-0 bg-gray-100;
-        font-family: 'Roboto', sans-serif;
-    }
+  body {
+    @apply h-full w-full p-0 m-0 bg-gray-100;
+    font-family: 'Roboto', sans-serif;
+  }
 
-    hr {
-        @apply border-0 h-0 w-full border-solid border-t-[1px] border-b-[1px] border-gray-10 !important;
-    }
+  hr {
+    @apply border-0 h-0 w-full border-solid border-t-[1px] border-b-[1px] border-gray-10 !important;
+  }
+
+  select {
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgd2lkdGg9IjE5IiBoZWlnaHQ9IjE4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiNmZmY7c3Ryb2tlOiMzNzQxNTE7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDoycHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZS8+PGcgaWQ9ImNoZXZyb24tYm90dG9tIj48bGluZSBjbGFzcz0iY2xzLTEiIHgxPSIxNiIgeDI9IjciIHkxPSIyMC41IiB5Mj0iMTEuNSIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjI1IiB4Mj0iMTYiIHkxPSIxMS41IiB5Mj0iMjAuNSIvPjwvZz48L3N2Zz4=)
+      no-repeat 75% 50%;
+    background-color: white;
+  }
 }

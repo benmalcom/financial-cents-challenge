@@ -13,13 +13,13 @@ defineProps({
 </script>
 
 <template>
-  <span :class="[$style.baseTag, $style[variant]]" v-bind="$attrs">
+  <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
     {{ message }}
   </span>
 </template>
 
 <style module>
-.baseTag {
+.base {
   @apply flex items-center text-sm mt-10 p-3;
 }
 

@@ -9,16 +9,16 @@ defineProps({
 </script>
 
 <template>
-  <button type="button" :class="[$style.baseTag, $style[variant]]" v-bind="$attrs">
+  <button type="button" :class="[$style.base, $style[variant]]" v-bind="$attrs">
     <slot></slot>
   </button>
 </template>
 
 <style module>
-.baseTag {
-  @apply text-white font-semibold rounded-md text-base px-5 py-3  border-none cursor-pointer opacity-90 hover:opacity-100;
+.base {
+  @apply text-white font-semibold rounded-md text-base px-5 py-3 border-none cursor-pointer hover:opacity-80;
   &:disabled {
-    @apply text-gray-40 bg-gray-20 focus:hover:bg-gray-30 focus:hover:text-gray-50 focus:hover:opacity-90 cursor-default !important;
+    @apply text-gray-40 bg-gray-20 cursor-default hover:opacity-100;
   }
 }
 

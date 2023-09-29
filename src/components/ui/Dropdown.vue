@@ -16,13 +16,16 @@ const onOutsideClick = () => {
 
 <template>
   <div class="relative w-fit" v-click-outside="onOutsideClick">
-    <Icon
-      icon="ph:dots-three-bold"
-      class="dropdown-icon"
-      :class="{ 'bg-green-20': isDropdownOpen }"
-      @click="toggleDropdown"
-      data-testid="dropdown-icon"
-    />
+    <slot name="trigger" :isOpen="isDropdownOpen" :toggleDropdown="toggleDropdown">
+      <Icon
+        icon="ph:dots-three-bold"
+        class="dropdown-icon"
+        :class="{ 'bg-green-20': isDropdownOpen }"
+        @click="toggleDropdown"
+        data-testid="dropdown-icon"
+      />
+    </slot>
+
     <!-- Dropdown content goes here -->
     <div
       v-if="isDropdownOpen"

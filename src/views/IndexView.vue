@@ -3,7 +3,7 @@ import { StackedLayout } from '@/components/layouts';
 import { InvoiceList, InvoiceListSkeleton } from '@/components/invoice';
 import { computed, onMounted, reactive, ref } from 'vue';
 import { getRandomInvoices } from '@/utils/invoice';
-import { Pagination, Banner } from '@/components/common';
+import { Pagination, Banner } from '@/components/ui';
 import { fetchUsers } from '@/services/user';
 
 const currentPage = ref(1);

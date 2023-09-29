@@ -1,5 +1,5 @@
 <script setup>
-import { Dropdown } from '@/components/common';
+import { Dropdown } from '@/components/ui';
 
 const dropdownItems = ['View', 'Edit', 'Delete'];
 
@@ -38,7 +38,7 @@ defineProps({
 
 <style lang="postcss" scoped>
 .user-card {
-  @apply w-full flex p-5 box-border gap-x-3 items-center bg-green-30 rounded-t-2xl;
+  @apply w-full flex p-5 box-border gap-x-3 items-center bg-green-30 rounded-t-[inherit];
 }
 
 .user-avatar {

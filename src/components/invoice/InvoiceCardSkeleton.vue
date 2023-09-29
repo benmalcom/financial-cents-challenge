@@ -1,4 +1,3 @@
-<script setup></script>
 <template>
   <div class="flex flex-col drop-shadow-md">
     <!-- Loading Skeleton for User Info -->
@@ -26,4 +25,3 @@
     </div>
   </div>
 </template>
-<style scoped></style>
