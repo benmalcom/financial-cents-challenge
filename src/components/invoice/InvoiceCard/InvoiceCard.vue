@@ -1,11 +1,15 @@
 <script setup>
 import ClientProfile from './ClientProfile.vue';
 import InvoiceSummary from './InvoiceSummary.vue';
+import { isValidInvoice } from '@/helpers/utils';
 
 const props = defineProps({
   invoice: {
     type: Object,
-    required: true
+    required: true,
+    validator(value) {
+      return isValidInvoice(value);
+    }
   }
 });
 
