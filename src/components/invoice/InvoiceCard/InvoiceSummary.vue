@@ -29,7 +29,7 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
         <span class="amount-text" id="amount-text">{{ formattedAmount }}</span>
         <Badge
           :variant="badgeVariant"
-          aria-role="status"
+          role="status"
           :aria-label="data.status"
           :title="data.status"
           >{{ data.status }}</Badge

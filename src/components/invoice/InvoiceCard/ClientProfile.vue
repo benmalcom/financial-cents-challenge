@@ -29,7 +29,7 @@ const fullName = computed(() => `${props.user.first_name} ${props.user.last_name
       <div class="client-name">
         {{ fullName }}
       </div>
-      <Dropdown :aria-haspopup="true" :aria-expanded="false">
+      <Dropdown :aria-haspopup="true" #default="{ isOpen }" :aria-expanded="isOpen">
         <ul class="dropdown-menu" role="menu">
           <li
             class="dropdown-item"
