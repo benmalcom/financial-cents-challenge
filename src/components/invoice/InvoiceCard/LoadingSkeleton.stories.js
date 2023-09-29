@@ -3,8 +3,7 @@ import { InvoicesLayout } from '@/components/layouts';
 
 export default {
   title: 'Components/Invoice',
-  component: LoadingSkeleton,
-  parameters: {}
+  component: LoadingSkeleton
 };
 
 const Template = (args) => ({

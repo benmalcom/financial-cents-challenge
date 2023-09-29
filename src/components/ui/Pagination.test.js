@@ -1,48 +1,59 @@
-import { render, screen, fireEvent } from '@testing-library/vue';
-import Pagination from './Pagination.vue';
+import { usePagination } from '@/composables';
 
-describe('Pagination', () => {
-  it('Renders without crash ', async () => {
-    render(Pagination, {
-      props: {
-        currentPage: 1,
-        totalPages: 6
-      }
-    });
+describe('usePagination', () => {
+  it('should return the initial page number', () => {
+    const composable = usePagination({ initialPage: 1, totalPages: 10 });
 
-    expect(screen.getByText(/1/)).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Previous' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Previous' })).toHaveAttribute('disabled');
+    expect(composable.currentPage.value).toBe(1);
   });
 
-  it('Sets new page on click of Next/Previous ', async () => {
-    render(Pagination, {
-      props: {
-        currentPage: 1,
-        totalPages: 6
-      }
-    });
-    expect(screen.getByRole('combobox')).toHaveValue('1');
-    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
-    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
-    expect(screen.getByRole('combobox')).toHaveValue('3');
-    await fireEvent.click(screen.getByRole('button', { name: 'Previous' }));
-    expect(screen.getByRole('combobox')).toHaveValue('2');
+  it('should go to the previous page', () => {
+    const composable = usePagination({ initialPage: 2, totalPages: 10 });
+
+    composable.onPreviousClick();
+
+    expect(composable.currentPage.value).toBe(1);
   });
 
-  it('Emits new page value on click of Next/Previous ', async () => {
-    const wrapper = render(Pagination, {
-      props: {
-        currentPage: 1,
-        totalPages: 6
-      }
-    });
-    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
-    expect(wrapper.emitted('page-change')[0]).toEqual([2]);
-    await fireEvent.click(screen.getByRole('button', { name: 'Next' }));
-    expect(wrapper.emitted('page-change')[1]).toEqual([3]);
-    await fireEvent.click(screen.getByRole('button', { name: 'Previous' }));
-    expect(wrapper.emitted('page-change')[2]).toEqual([2]);
+  it('should not go to the previous page if the current page is the first page', () => {
+    const composable = usePagination({ initialPage: 1, totalPages: 10 });
+
+    composable.onPreviousClick();
+
+    expect(composable.currentPage.value).toBe(1);
+  });
+
+  it('should go to the next page', () => {
+    const composable = usePagination({ initialPage: 1, totalPages: 10 });
+
+    composable.onNextClick();
+
+    expect(composable.currentPage.value).toBe(2);
+  });
+
+  it('should not go to the next page if the current page is the last page', () => {
+    const composable = usePagination({ initialPage: 10, totalPages: 10 });
+
+    composable.onNextClick();
+
+    expect(composable.currentPage.value).toBe(10);
+  });
+
+  it('should change the current page', () => {
+    const composable = usePagination({ initialPage: 1, totalPages: 10 });
+
+    composable.onPageChange(3);
+
+    expect(composable.currentPage.value).toBe(3);
+  });
+
+  it('should not change the current page if the new page number is invalid', () => {
+    const composable = usePagination({ initialPage: 1, totalPages: 10 });
+
+    composable.onPageChange(-1);
+    composable.onPageChange(11);
+    composable.onPageChange(NaN);
+
+    expect(composable.currentPage.value).toBe(1);
   });
 });

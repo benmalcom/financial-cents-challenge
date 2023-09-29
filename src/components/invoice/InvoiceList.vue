@@ -1,5 +1,5 @@
 <script setup>
-import { InvoiceCard, InvoiceCardSkeleton } from '@/components/invoice';
+import { InvoiceCard, LoadingSkeleton } from '@/components/invoice';
 defineProps({
   loading: {
     type: Boolean,
@@ -10,12 +10,15 @@ defineProps({
     required: true
   }
 });
+
+// Define the number of loading skeleton items.
+const loadingSkeletonCount = 6;
 </script>
 
 <template>
-  <section aria-label="Invoices" :aria-busy="loading">
+  <section aria-label="Invoices" :aria-busy="loading" v-cloak>
     <div class="grid-layout" v-if="loading" aria-busy="true">
-      <InvoiceCardSkeleton v-for="index in 6" :key="index" />
+      <LoadingSkeleton v-for="index in loadingSkeletonCount" :key="index" />
     </div>
     <div class="grid-layout" aria-label="Invoice Cards" v-else>
       <InvoiceCard v-for="invoice in invoices" :invoice="invoice" :key="invoice.user.id" />

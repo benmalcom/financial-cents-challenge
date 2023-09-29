@@ -23,10 +23,12 @@ defineProps({
 </template>
 
 <style scoped>
+/* Define valid badge variants */
 .base {
   @apply text-[8.5px] py-[1px] px-2 rounded-2xl font-medium;
 }
 
+/* Define styles for badge variants */
 .default {
   @apply text-gray-60 bg-gray-30;
 }
