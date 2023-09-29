@@ -1,7 +1,8 @@
-import { SAMPLE_INVOICE } from './data';
 import InvoiceCard from './InvoiceCard.vue';
 import { InvoicesLayout } from '@/components/layouts';
+import { getRandomInvoice } from '@/factories/invoice';
 
+const SAMPLE_INVOICE = getRandomInvoice();
 export default {
   title: 'Components/Invoice',
   component: InvoiceCard,
@@ -10,7 +11,7 @@ export default {
       description: 'This is an invoice sample data',
       control: {
         type: 'object',
-        mapping: SAMPLE_INVOICE
+        mapping: () => SAMPLE_INVOICE
       }
     }
   },

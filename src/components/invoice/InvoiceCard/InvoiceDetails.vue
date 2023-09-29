@@ -2,7 +2,7 @@
 import dayjs from 'dayjs';
 import { computed } from 'vue';
 import { Badge } from '@/components/ui';
-import { formatAmount } from '@/utils/invoice';
+import { formatAmount } from '@/helpers/formatter';
 
 const props = defineProps({
   data: {
@@ -37,7 +37,7 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 
 <style lang="postcss" scoped>
 .invoice-details {
-  @apply w-full px-6 py-2 box-border bg-white flex flex-col justify-between rounded-b-[inherit];
+  @apply w-full px-5 py-2 box-border bg-white flex flex-col justify-between rounded-b-[inherit];
 }
 
 .invoice-details-top,

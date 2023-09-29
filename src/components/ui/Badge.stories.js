@@ -1,7 +1,7 @@
 import Badge from './Badge.vue';
 
 export default {
-  title: 'Components/UI/Badge',
+  title: 'Components/Badge',
   component: Badge,
   argTypes: {
     default: {

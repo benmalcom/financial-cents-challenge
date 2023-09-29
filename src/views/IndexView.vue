@@ -3,8 +3,8 @@ import { computed, onMounted, reactive, ref } from 'vue';
 import { InvoiceList } from '@/components/invoice';
 import { InvoicesLayout } from '@/components/layouts';
 import { Pagination, Banner } from '@/components/ui';
+import { getRandomInvoice } from '@/factories/invoice';
 import { fetchUsers } from '@/services/user';
-import { getRandomInvoices } from '@/utils/invoice';
 
 const currentPage = ref(1);
 const totalPages = ref(0);
@@ -20,7 +20,8 @@ const fetchInvoices = async () => {
 
   try {
     const response = await fetchUsers(currentPage.value);
-    invoiceState.invoices = getRandomInvoices(response.data);
+    const users = response.data;
+    invoiceState.invoices = users.map(getRandomInvoice);
     totalPages.value = response.total_pages;
   } catch (e) {
     invoiceState.error = true;

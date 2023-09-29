@@ -2,10 +2,10 @@ import Button from './Button.vue';
 import Dropdown from './Dropdown.vue';
 
 const listItemClass =
-  'flex px-4 pt-1 h-8 text-base cursor-pointer items-center box-border hover:bg-gray-20 hover:text-gray-60';
+  'flex px-4 py-2 h-8 text-base cursor-pointer items-center box-border hover:bg-gray-20 hover:text-gray-60';
 export default {
   components: { Dropdown },
-  title: 'Components/UI/Dropdown',
+  title: 'Components/Dropdown',
   component: Dropdown,
   parameters: {
     layout: 'centered'
@@ -29,6 +29,8 @@ Default.args = {
   default: `<ul class="story-dropdown-menu">
              <li class="${listItemClass}">First item</li>
              <li class="${listItemClass}">Second item</li>
+             <hr />
+             <li class="${listItemClass}">Third item</li>
         </ul>
   `,
   trigger: `<span>Click me</span>`

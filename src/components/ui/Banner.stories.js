@@ -2,7 +2,7 @@ import Banner from './Banner.vue';
 import { InvoicesLayout } from '@/components/layouts';
 
 export default {
-  title: 'Components/UI/Banner',
+  title: 'Components/Banner',
   component: Banner,
   argTypes: {
     default: {

@@ -1,5 +1,5 @@
 <script setup>
-import { COLORS_VARIANTS } from '@/utils/constants';
+import { COLORS_VARIANTS } from '@/helpers/constants';
 
 defineProps({
   variant: {

@@ -16,7 +16,7 @@ const onOutsideClick = () => {
 </script>
 
 <template>
-  <div class="relative -mr-1.5 w-fit" v-click-outside="onOutsideClick">
+  <div class="relative w-fit -mr-1.5" v-bind="$attrs" v-click-outside="onOutsideClick">
     <!-- Dropdown trigger element -->
     <slot name="triggerElement" :isOpen="isDropdownOpen" :toggleDropdown="toggleDropdown">
       <Icon
