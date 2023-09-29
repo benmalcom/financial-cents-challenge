@@ -19,9 +19,11 @@ const badgeVariant = computed(() => (props.invoice.status === 'Overdue' ? 'dange
 <template>
   <div class="w-full xl:w-[50%] 2xl:w-full flex flex-col drop-shadow-md hover:drop-shadow-xl">
     <div class="w-full flex p-5 box-border gap-x-3 items-center bg-green-30 rounded-t-2xl">
-      <img class="w-12 h-12 rounded-xl" :src="invoice.user.avatar" alt="User Logo" />
-      <div class="flex-1 flex justify-between gap-x-2 h-full items-center">
-        <div class="font-semibold text-white flex-1">
+      <div class="w-12 h-12 flex flex-shrink-0">
+        <img class="w-full h-full rounded-xl" :src="invoice.user.avatar" alt="User Logo" />
+      </div>
+      <div class="flex w-full justify-between gap-x-2 h-full items-center min-w-0">
+        <div class="font-semibold text-white truncate mr-3.5">
           {{ invoice.user.first_name + ' ' + invoice.user.last_name }}
         </div>
         <Dropdown>
