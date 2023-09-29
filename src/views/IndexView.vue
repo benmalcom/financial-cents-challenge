@@ -59,7 +59,7 @@ const showEmptyBanner = computed(
     </Banner>
     <Banner variant="default" v-if="showEmptyBanner">There are no invoices available.</Banner>
 
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-6 box-border">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-6">
       <InvoiceListSkeleton v-if="invoiceState.loading" />
       <InvoiceList v-if="showList" :invoices="invoiceState.invoices" />
     </div>

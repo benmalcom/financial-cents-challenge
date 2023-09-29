@@ -1,9 +1,11 @@
 <script setup>
+import { COLORS_VARIANTS } from '@/utils/constants';
+
 defineProps({
   variant: {
     type: String,
     default: 'default',
-    validator: (value) => ['default', 'danger', 'success'].includes(value)
+    validator: (value) => COLORS_VARIANTS.includes(value)
   }
 });
 </script>

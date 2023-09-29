@@ -1,6 +1,6 @@
 import { getRandomDateInCurrentYear } from '@/utils/date';
 
-const getRandomAmount = (min = 1000, max = 20000) => {
+const getRandomAmount = (min = 1000, max = 10000) => {
   // Generate a random decimal number between min and max
   const randomDecimal = Math.random() * (max - min) + min;
   return Math.round(randomDecimal * 100) / 100;

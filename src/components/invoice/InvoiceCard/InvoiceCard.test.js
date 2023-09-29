@@ -1,17 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/vue';
 import InvoiceCard from './InvoiceCard.vue';
+import { SAMPLE_INVOICE } from './data';
 
-const sampleInvoice = {
-  user: {
-    first_name: 'John',
-    last_name: 'Doe',
-    email: 'johndoe@gmail.com',
-    avatar: 'https://reqres.in/img/faces/2-image.jpg'
-  },
-  amount: 12000,
-  status: 'Paid',
-  due_date: new Date(2023, 9, 15)
-};
+const sampleInvoice = SAMPLE_INVOICE;
 
 describe('InvoiceCard', () => {
   it('Renders without crash ', async () => {

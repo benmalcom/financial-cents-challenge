@@ -58,11 +58,11 @@ defineProps({
 }
 
 .dropdown-menu {
-  @apply w-32 px-0 py-1 my-1 text-sm text-gray-50;
+  @apply w-[115px] px-0 my-1 text-sm text-gray-50;
 }
 
 .dropdown-item {
-  @apply flex px-4 pt-1 h-8 text-base cursor-pointer items-center box-border hover:bg-gray-20 hover:text-gray-60;
+  @apply flex px-3 h-9 text-base cursor-pointer items-center box-border hover:bg-gray-20 hover:text-gray-60;
 }
 
 .dropdown-item.danger {

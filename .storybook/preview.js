@@ -1,13 +1,14 @@
 /** @type { import('@storybook/vue3').Preview } */
+import { setup } from '@storybook/vue3';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '../src/assets/main.css'; // replace with the name of your tailwind css file
+import '@/assets/main.css';
+import '@/assets/stories.css';
+import { onClickOutside } from '@/directives'; // replace with the name of your tailwind css file
 
 const preview = {
   parameters: {
     layout: 'padded',
-    viewport: {
-      viewports: INITIAL_VIEWPORTS
-    },
+    viewport: {},
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
@@ -15,15 +16,11 @@ const preview = {
         date: /Date$/
       }
     }
-  },
-  decorators: [
-    (story) => ({
-      components: { story },
-      template: `
-           <story />
-      `
-    })
-  ]
+  }
 };
+
+setup((app) => {
+  app.directive('click-outside', onClickOutside);
+});
 
 export default preview;

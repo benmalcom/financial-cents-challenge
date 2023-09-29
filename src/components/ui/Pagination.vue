@@ -34,6 +34,7 @@ watch(currentPage, (newPage) => emit('page-change', newPage));
         {{ page }}
       </option>
     </select>
+
     <Button @click="onNextClick" variant="success" :disabled="currentPage >= totalPages"
       >Next</Button
     >

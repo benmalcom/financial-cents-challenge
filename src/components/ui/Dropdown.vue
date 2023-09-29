@@ -1,6 +1,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { ref } from 'vue';
+
 const isDropdownOpen = ref(false);
 
 const toggleDropdown = () => {
@@ -15,8 +16,9 @@ const onOutsideClick = () => {
 </script>
 
 <template>
-  <div class="relative w-fit" v-click-outside="onOutsideClick">
-    <slot name="trigger" :isOpen="isDropdownOpen" :toggleDropdown="toggleDropdown">
+  <div class="relative -mr-1.5 w-fit" v-click-outside="onOutsideClick">
+    <!-- Dropdown trigger element -->
+    <slot name="triggerElement" :isOpen="isDropdownOpen" :toggleDropdown="toggleDropdown">
       <Icon
         icon="ph:dots-three-bold"
         class="dropdown-icon"
@@ -26,10 +28,10 @@ const onOutsideClick = () => {
       />
     </slot>
 
-    <!-- Dropdown content goes here -->
+    <!-- Dropdown content -->
     <div
       v-if="isDropdownOpen"
-      class="absolute right-0 w-fit py-0 mt-2 bg-white shadow-lg rounded-md z-20"
+      class="absolute right-0 py-0 mt-1.5 bg-white shadow-lg rounded-md z-20"
     >
       <slot />
     </div>

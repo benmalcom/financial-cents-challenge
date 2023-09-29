@@ -1,0 +1,9 @@
+.story-dropdown-menu-trigger {
+  padding: 5px;
+  height: unset !important;
+  margin-bottom: 7px;
+}
+.story-dropdown-menu {
+  width: 180px;
+  padding: 2px 0;
+}

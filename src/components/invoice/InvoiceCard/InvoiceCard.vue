@@ -1,6 +1,6 @@
 <script setup>
-import UserDetails from '@/components/invoice/UserDetails.vue';
-import InvoiceDetails from '@/components/invoice/InvoiceDetails.vue';
+import UserDetails from '@/components/invoice/InvoiceCard/UserDetails.vue';
+import InvoiceDetails from '@/components/invoice/InvoiceCard/InvoiceDetails.vue';
 
 const props = defineProps({
   invoice: {

@@ -15,7 +15,8 @@ const config = {
         }
       }
     },
-    '@storybook/addon-viewport'
+    '@storybook/addon-viewport',
+    'storybook-addon-vue-slots'
   ],
   framework: {
     name: '@storybook/vue3-vite',
