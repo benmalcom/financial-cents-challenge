@@ -25,7 +25,7 @@ const onOutsideClick = () => {
     <!-- Dropdown content goes here -->
     <div
       v-if="isDropdownOpen"
-      class="absolute right-0 w-32 py-0 mt-2 bg-white shadow-lg rounded-md z-20"
+      class="absolute right-0 w-fit py-0 mt-2 bg-white shadow-lg rounded-md z-20"
     >
       <slot></slot>
     </div>

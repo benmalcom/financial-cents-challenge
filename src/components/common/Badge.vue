@@ -30,7 +30,7 @@ const variantClass = computed(
 </script>
 
 <template>
-  <span :class="`${variantClass} text-xs mr-2 px-2 rounded-2xl`">
+  <span :class="`${variantClass} text-xs mr-2 px-2 pt-1 rounded-2xl`">
     <slot></slot>
   </span>
 </template>

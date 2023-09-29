@@ -9,6 +9,7 @@ const app = createApp(App);
 
 app.use(router);
 
+// Register directives
 app.directive('click-outside', onClickOutside);
 
 app.mount('#app');

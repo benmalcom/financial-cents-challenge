@@ -3,6 +3,7 @@ require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {
   globals: {
+    process: true,
     module: true
   },
   root: true,
