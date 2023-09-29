@@ -7,14 +7,14 @@ const dropdownItems = ['View', 'Edit', 'Delete'];
 
 // Define props for the client data
 const props = defineProps({
-  client: {
+  bioData: {
     type: Object,
     required: true
   }
 });
 
 // Compute the full name of the client using their first and last name
-const fullName = computed(() => `${props.client.first_name} ${props.client.last_name}`);
+const fullName = computed(() => `${props.bioData.first_name} ${props.bioData.last_name}`);
 </script>
 
 <template>
@@ -24,7 +24,7 @@ const fullName = computed(() => `${props.client.first_name} ${props.client.last_
     <div class="client-avatar">
       <img
         class="client-avatar-image"
-        :src="client.avatar"
+        :src="bioData.avatar"
         alt="client avatar"
         aria-describedby="client-avatar-description"
       />

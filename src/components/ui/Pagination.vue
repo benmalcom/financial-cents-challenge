@@ -42,7 +42,7 @@ watch(currentPage, (newPage) => emit('page-change', newPage));
       class="page-selector"
       id="page-selector"
       aria-controls="page-selector"
-      @change="onPageChange(parseInt($event.target.value))"
+      @change="onPageChange($event.target.value)"
     >
       <!-- Iterate through pages and create options -->
       <option

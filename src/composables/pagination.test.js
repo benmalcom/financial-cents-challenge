@@ -44,7 +44,7 @@ describe('usePagination', () => {
     const initialPage = 3;
     const totalPages = 10;
     const { currentPage, onPageChange } = usePagination({ initialPage, totalPages });
-    onPageChange({ target: { value: '5' } });
+    onPageChange('5');
     expect(currentPage.value).toBe(5);
   });
 

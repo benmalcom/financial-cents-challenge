@@ -1,5 +1,5 @@
 <script setup>
-import ClientProfile from './ClientProfile.vue';
+import ClientBioData from './ClientBioData.vue';
 import InvoiceSummary from './InvoiceSummary.vue';
 import { isValidInvoice } from '@/helpers/utils';
 
@@ -13,12 +13,12 @@ const props = defineProps({
   }
 });
 
-const { user: client, ...invoiceData } = props.invoice;
+const { user: bioData, ...invoiceData } = props.invoice;
 </script>
 
 <template>
   <div class="invoice-wrapper" aria-label="Invoice card" aria-current="true" v-bind="$attrs">
-    <ClientProfile :client="client" />
+    <ClientBioData :bioData="bioData" />
     <InvoiceSummary :invoiceData="invoiceData" />
   </div>
 </template>

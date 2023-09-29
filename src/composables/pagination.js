@@ -37,7 +37,8 @@ const usePagination = ({ initialPage, totalPages }) => {
   };
 
   // A function to change the current page.
-  const onPageChange = (newPage) => {
+  const onPageChange = (page) => {
+    const newPage = parseInt(page);
     // Validate the new page number.
     if (!Number.isInteger(newPage) || newPage <= 0 || newPage > totalPages) {
       // The new page number is invalid.
