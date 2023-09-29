@@ -8,7 +8,7 @@
       <div class="h-12 w-12 rounded-lg bg-gray-300"></div>
       <div class="flex-1 flex justify-between gap-x-2 h-full items-center">
         <div class="font-semibold text-white flex-1">Loading User...</div>
-        <div class="w-32 h-6 bg-gray-300"></div>
+        <div class="w-8 h-2 bg-gray-300"></div>
       </div>
     </div>
 

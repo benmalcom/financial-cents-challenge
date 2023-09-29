@@ -1,14 +1,6 @@
 # financial-cents-challenge
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+This is the repo for The financial cents challenge, scaffolded with Vite, build with vue3 and tailwindcss.
 
 ## Project Setup
 
@@ -16,26 +8,25 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run project from root directory
 
 ```sh
 npm run dev
 ```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Project running on [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
-```
+``` 
 
-### Lint with [ESLint](https://eslint.org/)
+### Design decisions & thoughts
+* Project was done with Vue3 and Tailwindcss
+* The availability of a design file (e.g figma file) instead of an image would've guaranteed a more pixel-perfect translation.
+* Added some couple of tests
+* Added loading skeletons for loading state
 
-```sh
-npm run lint
-```
+
+
+

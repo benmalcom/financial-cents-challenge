@@ -58,7 +58,7 @@ const showPagination = computed(() => invoiceState.invoices.length > 0 && !invoi
     <Banner
       variant="default"
       message="There are no invoices available."
-      v-if="invoiceState.invoices.length === 0 && !invoiceState.loading"
+      v-if="invoiceState.invoices.length === 0 && !invoiceState.loading && !invoiceState.error"
     />
 
     <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-6 box-border">
