@@ -1,4 +1,4 @@
-export const getRandomUser = () => ({
+export const getStaticUser = () => ({
   first_name: 'Janet ',
   last_name: 'Weaver',
   email: 'janetweaver@gmail.com',

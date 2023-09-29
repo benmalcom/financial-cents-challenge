@@ -12,12 +12,12 @@ defineProps({
 </script>
 
 <template>
-  <div class="user-details" aria-label="User details" aria-current="true">
-    <div class="user-avatar">
-      <img class="user-avatar-image" :src="user.avatar" alt="User avatar" />
+  <div class="client-details" aria-label="Client details" aria-current="true">
+    <div class="client-avatar">
+      <img class="client-avatar-image" :src="user.avatar" alt="User avatar" />
     </div>
-    <div class="user-info">
-      <div class="user-name">
+    <div class="client-info">
+      <div class="client-name">
         {{ user.first_name + ' ' + user.last_name }}
       </div>
       <Dropdown :aria-haspopup="true" :aria-expanded="false">
@@ -39,23 +39,23 @@ defineProps({
 </template>
 
 <style lang="postcss" scoped>
-.user-details {
+.client-details {
   @apply w-full flex p-5 box-border gap-x-3 items-center bg-green-30 rounded-t-[inherit];
 }
 
-.user-avatar {
+.client-avatar {
   @apply w-12 h-12 flex flex-shrink-0;
 }
 
-.user-avatar-image {
+.client-avatar-image {
   @apply w-full h-full rounded-xl;
 }
 
-.user-info {
+.client-info {
   @apply flex w-full justify-between gap-x-2 h-full items-center min-w-0;
 }
 
-.user-name {
+.client-name {
   @apply font-semibold text-white truncate mr-3.5;
 }
 

@@ -1,10 +1,10 @@
 import { getRandomDateInCurrentYear } from '@/factories/date';
-import { getRandomUser } from '@/factories/user';
+import { getStaticUser } from '@/factories/user';
 import { getRandomAmount, getRandomInvoicePaymentStatus } from '@/helpers/utils';
 
 export const getRandomInvoice = (user = null) => {
   if (!user) {
-    user = getRandomUser();
+    user = getStaticUser();
   }
 
   return {

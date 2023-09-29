@@ -1,6 +1,6 @@
 <script setup>
-import InvoiceDetails from './InvoiceDetails.vue';
-import UserDetails from './UserDetails.vue';
+import ClientProfile from './ClientProfile.vue';
+import InvoiceSummary from './InvoiceSummary.vue';
 
 const props = defineProps({
   invoice: {
@@ -9,13 +9,13 @@ const props = defineProps({
   }
 });
 
-const { user, ...invoiceData } = props.invoice;
+const { user, ...invoiceInfo } = props.invoice;
 </script>
 
 <template>
   <div class="invoice-wrapper" aria-label="Invoice card" aria-current="true" v-bind="$attrs">
-    <UserDetails :user="user" />
-    <InvoiceDetails :data="invoiceData" />
+    <ClientProfile :user="user" />
+    <InvoiceSummary :data="invoiceInfo" />
   </div>
 </template>
 

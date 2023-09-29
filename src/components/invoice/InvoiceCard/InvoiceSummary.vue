@@ -17,15 +17,15 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 </script>
 
 <template>
-  <div class="invoice-details" aria-label="Invoice details" aria-current="true">
-    <div class="invoice-details-top">
-      <span class="invoice-details-item">Last invoice</span>
-      <span class="invoice-details-item">{{ formattedDueDate }}</span>
+  <div class="invoice-summary" aria-label="Invoice summary" aria-current="true">
+    <div class="invoice-summary-top">
+      <span class="invoice-summary-item">Last invoice</span>
+      <span class="invoice-summary-item">{{ formattedDueDate }}</span>
     </div>
     <hr role="separator" />
-    <div class="invoice-details-bottom">
-      <span class="invoice-details-item">Amount</span>
-      <div class="invoice-details-amount" aria-describedby="amount-text">
+    <div class="invoice-summary-bottom">
+      <span class="invoice-summary-item">Amount</span>
+      <div class="invoice-summary-amount" aria-describedby="amount-text">
         <span class="amount-text" id="amount-text">{{ formattedAmount }}</span>
         <Badge :variant="badgeVariant" role="status" :aria-label="data.status">{{
           data.status
@@ -36,20 +36,20 @@ const badgeVariant = computed(() => (props.data.status === 'Overdue' ? 'danger' 
 </template>
 
 <style lang="postcss" scoped>
-.invoice-details {
+.invoice-summary {
   @apply w-full px-5 py-2 box-border bg-white flex flex-col justify-between rounded-b-[inherit];
 }
 
-.invoice-details-top,
-.invoice-details-bottom {
+.invoice-summary-top,
+.invoice-summary-bottom {
   @apply flex justify-between items-center h-9;
 }
 
-.invoice-details-item {
+.invoice-summary-item {
   @apply text-gray-40;
 }
 
-.invoice-details-amount {
+.invoice-summary-amount {
   @apply flex items-center gap-1.5;
 }
 
