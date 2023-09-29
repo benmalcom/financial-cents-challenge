@@ -1,9 +1,5 @@
 <script setup>
 defineProps({
-  message: {
-    type: String,
-    required: true
-  },
   variant: {
     type: String,
     default: 'default',
@@ -14,7 +10,7 @@ defineProps({
 
 <template>
   <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
-    {{ message }}
+    <slot />
   </span>
 </template>
 

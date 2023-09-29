@@ -10,11 +10,7 @@ module.exports = {
     module: true
   },
   root: true,
-  'extends': [
-    'plugin:vue/vue3-essential',
-    'eslint:recommended',
-    '@vue/eslint-config-prettier/skip-formatting'
-  ],
+  'extends': ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/eslint-config-prettier/skip-formatting', 'plugin:storybook/recommended'],
   parserOptions: {
     ecmaVersion: 'latest'
   },

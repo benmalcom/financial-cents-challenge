@@ -43,6 +43,10 @@ const showList = computed(
 );
 
 const showPagination = computed(() => invoiceState.invoices.length > 0 && !invoiceState.error);
+const showErrorBanner = computed(() => invoiceState.error && !invoiceState.loading);
+const showEmptyBanner = computed(
+  () => invoiceState.invoices.length === 0 && !invoiceState.loading && !invoiceState.error
+);
 </script>
 
 <template>
@@ -50,16 +54,10 @@ const showPagination = computed(() => invoiceState.invoices.length > 0 && !invoi
     <h1 class="text-gray-60 mb-0 font-medium text-2xl md:text-3xl">Monthly Bookkeeping</h1>
     <p class="text-gray-40 mt-3">List of paid and outstanding invoices.</p>
 
-    <Banner
-      variant="danger"
-      message="An error occurred while fetching invoices, please reload page."
-      v-if="invoiceState.error && !invoiceState.loading"
-    />
-    <Banner
-      variant="default"
-      message="There are no invoices available."
-      v-if="invoiceState.invoices.length === 0 && !invoiceState.loading && !invoiceState.error"
-    />
+    <Banner variant="danger" v-if="showErrorBanner">
+      An error occurred while fetching invoices, please reload page.
+    </Banner>
+    <Banner variant="default" v-if="showEmptyBanner">There are no invoices available.</Banner>
 
     <div class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-6 box-border">
       <InvoiceListSkeleton v-if="invoiceState.loading" />

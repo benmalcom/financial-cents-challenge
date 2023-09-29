@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <span :class="[$style.base, $style[variant]]" v-bind="$attrs">
-    <slot></slot>
+    <slot />
   </span>
 </template>
 

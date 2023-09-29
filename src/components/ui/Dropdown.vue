@@ -31,7 +31,7 @@ const onOutsideClick = () => {
       v-if="isDropdownOpen"
       class="absolute right-0 w-fit py-0 mt-2 bg-white shadow-lg rounded-md z-20"
     >
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

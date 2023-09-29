@@ -18,12 +18,12 @@ defineProps({
 .base {
   @apply text-white font-semibold rounded-md text-base px-5 py-3 border-none cursor-pointer hover:opacity-80;
   &:disabled {
-    @apply text-gray-40 bg-gray-20 cursor-default hover:opacity-100;
+    @apply cursor-default hover:opacity-100 text-gray-40 bg-gray-20;
   }
 }
 
 .default {
-  @apply text-white bg-blue-700 hover:bg-blue-800;
+  @apply text-gray-50 bg-gray-30;
 }
 
 .success {
